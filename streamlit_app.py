@@ -25,16 +25,16 @@ streamlit.header("Fruity Vice Advice!")
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice)
 
-fruit_add = streamlit.text_input('What fruit would you like to add?','jackfruit')
-streamlit.write('The user entered ', fruit_add)
-
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 streamlit.dataframe(fruityvice_normalized)
 
-fruityvice_response_add = requests.get("https://fruityvice.com/api/fruit/"+fruit_add)
-fruityvice_normalized_add = pandas.json_normalize(fruityvice_response_add.json())
-streamlit.dataframe(fruityvice_normalized_add)
+#fruit_add = streamlit.text_input('What fruit would you like to add?','jackfruit')
+#streamlit.write('The user entered ', fruit_add)
+
+#fruityvice_response_add = requests.get("https://fruityvice.com/api/fruit/"+fruit_add)
+#fruityvice_normalized_add = pandas.json_normalize(fruityvice_response_add.json())
+#streamlit.dataframe(fruityvice_normalized_add)
 
 
 ########################################################################################
